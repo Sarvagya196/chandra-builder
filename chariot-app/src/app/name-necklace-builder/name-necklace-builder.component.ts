@@ -18,6 +18,17 @@ import { companySettings } from '../common/companyCustomization';
 })
 export class NameNecklaceBuilderComponent implements OnInit, AfterViewInit{
 
+  isDescriptionVisible: boolean = false;
+  isDetailsVisible: boolean = false;
+
+  toggleDescription() {
+    this.isDescriptionVisible = !this.isDescriptionVisible;
+  }
+
+  toggleDetails() {
+    this.isDetailsVisible = !this.isDetailsVisible;
+  }
+
   public formGroup = new FormGroup({
     quantity: new FormControl(1, [Validators.required, Validators.min(1)]),
     metalColor: new FormControl('Rose Gold', Validators.required),
@@ -143,5 +154,23 @@ export class NameNecklaceBuilderComponent implements OnInit, AfterViewInit{
     let Letter = firstLetter ? customName.charAt(0) : customName.charAt(customName.length - 1);
     return firstLetter ? this.curvedLettersLeft.includes(Letter.toUpperCase()) : this.curvedLettersRight.includes(Letter.toUpperCase());
   }
+
+  faqs = [
+    { question: "Do you offer resizing for necklaces or bracelets?", answer: "Sample Answer", open: false },
+    { question: "Can I cancel or modify my order after it’s been placed?", answer: "Sample Answer", open: false },
+    { question: "What is your return/exchange policy?", answer: "Sample Answer", open: false }
+  ];
+
+  // Toggle function to open/close an individual FAQ
+  toggleFaq(index: number) {
+    this.faqs[index].open = !this.faqs[index].open;
+  }
+
+  // Function to toggle all FAQs open/closed
+  toggleAll() {
+    const allOpen = this.faqs.every(faq => faq.open);
+    this.faqs.forEach(faq => faq.open = !allOpen);
+  }
+
 }
 

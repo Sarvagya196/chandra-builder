@@ -163,14 +163,87 @@
             
             <!-- Submit Button -->
             <div class="form-group">
-                <button [ngStyle]="formGroup.invalid ? {} : {'background-color': themeColor(), 'color': '#fff'}"
-                    type="submit" [disabled]="formGroup.invalid" class="submit-button" (click)="addToCart()">
-                    Add to cart
-                </button>
+                <div class="horizontal-buttons">
+                    <button [ngStyle]="formGroup.invalid ? {} : {'background-color': themeColor(), 'color': '#fff'}"
+                        type="submit" [disabled]="formGroup.invalid" class="submit-button" (click)="addToCart()">
+                        Buy Now
+                    </button>
+                    <button [ngStyle]="formGroup.invalid ? {} : {'background-color': themeColor(), 'color': '#fff'}"
+                        type="submit" [disabled]="formGroup.invalid" class="submit-button" (click)="addToCart()">
+                        Add to cart
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-
+    <div class="product-section">
+        <div class="product-header" (click)="toggleDescription()">
+            <span>Product Description</span>
+            <span class="toggle-icon">{{ isDescriptionVisible ? '-' : '+' }}</span>
+        </div>
+        <div class="product-description" *ngIf="isDescriptionVisible">
+            <p>
+                The Diamond Block Name Necklace is a beautifully crafted piece that celebrates the essence of individuality.
+                Whether you're treating yourself or gifting it to someone special, this personalized necklace is a stunning
+                way to showcase names, initials, or significant dates in a design that’s as unique as the wearer.
+            </p>
+            <p>
+                Crafted with meticulous attention to detail, this necklace is available in 10 KT or 14 KT gold in your choice
+                of Yellow, White, or Rose Gold. Choose from three exquisite diamond qualities to match your budget and create
+                a piece that perfectly reflects your style.
+            </p>
+            <ul>
+                <li><strong>Small Letter Height:</strong> approx. 0.30 mm</li>
+                <li><strong>Large Letter Height:</strong> approx. 0.35 mm</li>
+            </ul>
+            <p>
+                This custom necklace also offers the opportunity to add up to 10 personalized charms—perfect for commemorating special moments or adding a touch of personal flair.
+                <br>
+                Explore our full Personalized Jewelry Collection and discover the perfect piece to reflect your unique story.
+                <br>
+                Please note: All custom jewelry sales are final.
+            </p>
+        </div>
+    
+        <div class="product-header" (click)="toggleDetails()">
+            <span>Product Details</span>
+            <span class="toggle-icon">{{ isDetailsVisible ? '-' : '+' }}</span>
+        </div>
+        <div class="product-details" *ngIf="isDetailsVisible">
+            <h4>Metal Information:</h4>
+            <ul>
+                <li>Karat: 10 KT or 14 KT</li>
+                <li>Color: Yellow Gold, White Gold, Rose Gold</li>
+            </ul>
+            <h4>Diamond Information:</h4>
+            <ul>
+                <li>Number of Diamonds: [Insert Number]</li>
+                <li>Shape: [Insert Shape]</li>
+                <li>Carat Weight: [Insert Carat Weight]</li>
+                <li>Diamond Color: [Insert Diamond Color Grade]</li>
+                <li>Diamond Clarity: [Insert Diamond Clarity Grade]</li>
+            </ul>
+            <h4>Additional Information:</h4>
+            <ul>
+                <li>Total Diamond Weight (Approx.):[Insert Total Carat Weight]</li>
+                <li>Chain Type / Length:[Insert Chain Type] / [Insert Length]</li>
+                <li>Design Width (Approx.):[Insert Width]</li>
+            </ul>
+        </div>
+    </div>
+    <div class="faq-section">
+        <h2>FAQ’s <span class="toggle-icon" (click)="toggleAll()">&#9662;</span></h2>
+        <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+          <div class="faq-question" (click)="toggleFaq(i)">
+            <span>{{ faq.question }}</span>
+            <span class="faq-toggle">{{ faq.open ? '−' : '+' }}</span>
+          </div>
+          <div class="faq-answer" *ngIf="faq.open">
+            {{ faq.answer }}
+          </div>
+        </div>
+    </div>
+      
 
 </div>
 
