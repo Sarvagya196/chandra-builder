@@ -1,0 +1,9 @@
+{
+  "routes": {
+    "/custom-necklace-builder": {},
+    "/date-bracelet-builder": {},
+    "/home": {},
+    "/name-bracelet-builder": {},
+    "/name-necklace-builder": {}
+  }
+}
