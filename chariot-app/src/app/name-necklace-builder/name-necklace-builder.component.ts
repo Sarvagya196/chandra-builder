@@ -18,8 +18,8 @@ import { companySettings } from '../common/companyCustomization';
 })
 export class NameNecklaceBuilderComponent implements OnInit, AfterViewInit{
 
-  isDescriptionVisible: boolean = false;
-  isDetailsVisible: boolean = false;
+  isDescriptionVisible: boolean = true;
+  isDetailsVisible: boolean = true;
 
   toggleDescription() {
     this.isDescriptionVisible = !this.isDescriptionVisible;
