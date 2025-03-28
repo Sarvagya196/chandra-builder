@@ -1,4 +1,5 @@
 .main-product-page {
+  font-family: 'outfit';
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,7 +40,9 @@
   }
 
   .parent-container {
+    margin-top: 2rem;
     display: flex;
+    align-items: flex-start;
     justify-content: space-evenly;
     font-family: 'Avenir';
     font-weight: light;
@@ -47,16 +50,45 @@
     width: 100%;
 
     .form-container {
+      padding-right: 5rem;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
       width: 40%;
       // border: 2px solid red;
 
+      .price-section {
+        font-size: 2.25rem;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: 300;
+        color: #868686;
+      }
+
+      .form-group-sub-container {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .form-group-row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
       .form-group {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+
+        label {
+          color: #252525;
+          font-size: 2rem;
+        }
 
         .horizontal-buttons {
           display: flex;
@@ -72,13 +104,24 @@
           width: 40%;
         }
 
+        .quantity-input {
+          padding-left: 2rem;
+          height: 46px;
+          font-size: 1.5rem;
+          width: 20%;
+          //padding: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 30px;
+        }
+
         .options-group {
           display: flex;
           gap: 0.5rem;
 
           .option {
+            font-size: 1.5rem;
             height: 50px;
-            width: 150px;
+            // width: 150px;
             padding: 0.5rem 1rem;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -98,12 +141,13 @@
         }
 
         .submit-button {
+          font-size: 2.25rem;
+          font-weight: 400;
           padding: 0.7rem 1.5rem;
           color: #fff;
           height: 60px;
           border: none;
           border-radius: 4px;
-          font-size: 1rem;
           cursor: pointer;
           transition: background-color 0.3s ease;
           width: 50%;
@@ -123,6 +167,7 @@
       align-items: center;
       justify-content: center;
       width: 60%;
+      
 
       .left-img {
         margin-top: -180px;
@@ -165,6 +210,7 @@
     }
   }
   .product-section {
+      font-size: 1.5rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -174,6 +220,8 @@
   }
 
   .product-header {
+      padding-bottom: 1rem;
+      font-size: 1.5rem;
       display: flex;
       justify-content: space-between;
       cursor: pointer;
@@ -186,17 +234,22 @@
   }
 
   .faq-section {
+    color: #252525;
     margin-bottom: 3rem;
     width: 80%;
     padding-top: 1rem;
   
     h2 {
+      font-weight: 200;
+      font-size: 3rem;
       border-bottom: 1px solid #252525;
       text-align: center;
       cursor: pointer;
     }
   
     .faq-item {
+      font-size: 1.5rem;
+      font-weight: 300;
       border-bottom: 1px solid #252525;
       padding: 10px 0;
   
@@ -204,7 +257,6 @@
         display: flex;
         justify-content: space-between;
         cursor: pointer;
-        font-weight: bold;
       }
   
       .faq-answer {
