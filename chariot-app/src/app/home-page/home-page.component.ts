@@ -13,7 +13,7 @@ import { cp } from 'node:fs';
 export class HomePageComponent implements OnInit {
 
   public buildersData: { Img: string; Description: string; Url: string, queryParams: any }[] = [];
-  public companySetting: { theme: string; multiplier: number; header: {img: string, description: string} } = companySettings['default'];
+  public companySetting: { theme: string; multiplier: number; header: {img: string, description: string []} } = companySettings['default'];
   public headerDetails : { Img: string; Description: string;} = { Img: '', Description: ''};
 
   constructor(private route: ActivatedRoute) {}
@@ -34,10 +34,10 @@ export class HomePageComponent implements OnInit {
       this.companySetting = companyName ? companySettings[companyName] : companySettings['default'];
 
       this.buildersData = [
-        { Img: 'assets/home/homePage_2.jpg', Description: 'NAME NECKLACE', Url: `/name-necklace-builder`, queryParams },
-        { Img: 'assets/home/homePage_2.jpg', Description: 'DATE NECKLACE', Url: `/date-necklace-builder`, queryParams },
-        { Img: 'assets/home/homePage_1.jpg', Description: 'NAME BRACELET', Url: `/name-bracelet-builder`, queryParams },
-        { Img: 'assets/home/homePage_1.jpg', Description: 'DATE BRACELET', Url: `/date-bracelet-builder`, queryParams }
+        { Img: 'assets/home/homePage_2.jpg', Description: 'Name Necklace', Url: `/name-necklace-builder`, queryParams },
+        { Img: 'assets/home/homePage_2.jpg', Description: 'Date Necklace', Url: `/date-necklace-builder`, queryParams },
+        { Img: 'assets/home/homePage_1.jpg', Description: 'Name Bracelet', Url: `/name-bracelet-builder`, queryParams },
+        { Img: 'assets/home/homePage_1.jpg', Description: 'Date Bracelet', Url: `/date-bracelet-builder`, queryParams }
       ];
     });
   }

@@ -1,5 +1,5 @@
 <div [class.selected]="isSelected()" (click)="clicked.emit()"
-    [style.background-color]="isSelected() ? themeColor() : ''">
+    [style.border-color]="isSelected() ? themeColor() : 'black'">
     <img [src]="imageSource()" />
     <span>{{buttonText()}}</span>
 </div>
