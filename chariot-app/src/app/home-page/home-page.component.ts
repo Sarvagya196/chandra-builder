@@ -19,7 +19,7 @@ export class HomePageComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   selectedTab: string = 'necklace'; // Default tab
-  necklaceImage: string = 'assets/home/bracelet-bottom.jpg';
+  necklaceImage: string = 'assets/home/necklace-bottom.jpg';
   braceletImage: string = 'chariot-app//public//assets//home//bracelet-bottom.jpg'; 
 
   selectTab(tab: string) {

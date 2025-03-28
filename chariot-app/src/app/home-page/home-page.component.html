@@ -2,14 +2,14 @@
 <div class="main-page" [ngStyle]="{'color': companySetting.theme}">
     
     <div class="main-page-head">
-        <img src="selectedTab === 'necklace' ? necklaceImage : braceletImage" alt="logo" class="logo" />
+        <img [src]="selectedTab === 'necklace' ? necklaceImage : braceletImage" alt="logo" class="logo" />
         <div class="main-page-head-text">
             <h2>{{companySetting.header.description}}</h2>
         </div>
     </div>
     
     
-    <div class="product-page-first-head">
+    <!-- <div class="product-page-first-head">
         Personalized Jewelry
     </div>
     <p class="products-page-first-para">
@@ -20,15 +20,15 @@
         along with pendant size to be set in one of our signature font <br />
         styles, and tailor your personalized name pendant to suit your
         personal preferences.
-    </p>
-    <div class="hr-container">
+    </p> -->
+    <!-- <div class="hr-container">
         <img
           src="https://therunawaycrew.com/wp-content/uploads/2024/07/Line-65.png"
           alt="line"
           class="hr-line"
           [ngStyle]="{'border': '1px solid ' + companySetting.theme}"
         />
-    </div>
+    </div> -->
 
     <div class="tabs">
         <span 
@@ -55,21 +55,25 @@
     </div>
 
     <div class="image-container">
-        <img src="selectedTab === 'necklace' ? necklaceImage : braceletImage" alt="logo" class="logo" />
+        <img [src]="selectedTab === 'necklace' ? necklaceImage : braceletImage" alt="logo" class="logo" />
     </div>
 </div>
 
 <ng-template #builderTemplate let-index="index">
+    <div>
+    <a [routerLink]="buildersData[index].Url" [queryParams]="buildersData[index].queryParams">
         <div class="builder-details">
-            <h1>{{ buildersData[index].Description }}</h1>
             <img [src]="buildersData[index].Img" />
-            <a [routerLink]="buildersData[index].Url" [queryParams]="buildersData[index].queryParams">
-                <div class="shop-now-button">
+            <!-- <a [routerLink]="buildersData[index].Url" [queryParams]="buildersData[index].queryParams"> -->
+                <!-- <div class="shop-now-button">
                     <h3>SHOP NOW</h3>
-                </div>
-            </a>
+                </div> -->
+            <!-- </a> -->
         </div>
-
+    </a>
+    
+    <p class="card-desc">{{ buildersData[index].Description }}</p>
+    </div>
 </ng-template>
 
 <div class="personalization-section">

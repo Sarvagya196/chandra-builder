@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  font-family: 'outfit';
 
   .main-page-head {
     position: relative;
@@ -12,8 +13,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 20%;
-    font-family: 'Avenir';
+    height: 32rem;
+    font-family: 'outfit';
     font-weight: 200;
     font-size: 28px;
 
@@ -27,7 +28,8 @@
       right: 5%;
       padding: 10px 20px;
       color: black;
-      font-size: 1.5rem;
+      font-size: 2rem;
+      font-weight: 300;
       text-align: center;
       border-radius: 5px;
     }
@@ -68,6 +70,7 @@
 
 
   .products-container{
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -83,12 +86,16 @@
 
       .builder-details{
         border: 2px solid black;
+        border-radius: 0.625rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 350px;
-        width: 350px;
+        //height: 350px;
+        height: 24.75rem;
+        //width: 350px;
+        width: 18.5rem;
         margin: 20px 0px;
+        cursor: pointer;
     
         img{
             height: 200px;
@@ -119,9 +126,19 @@
           }
         }
       }
+
+      .card-desc {
+        font-size: 1.5rem;
+        text-align: center;
+        color: #252525;
+        font-family: 'outfit';
+        text-decoration: none;
+      }
+
     }
   }
   .tabs {
+    margin-top: 2rem;
     font-family: 'outfit';
     font-weight: 300;
     display: flex;
@@ -130,8 +147,8 @@
   
     span {
       margin: 0 15px;
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 1.5rem;
+      font-weight: 300;
       cursor: pointer;
       position: relative;
   
@@ -145,30 +162,34 @@
 
   .image-container {
     margin-top: 5rem;
-    width: 80%;
+    width: 90%;
+    img {
+      height: 24rem;
+      width: 100%;
+    }
   }
 }
 
 
 .personalization-section {
   text-align: center;
-  width: 80%;
+  width: 90%;
   margin: 40px auto;
   padding: 20px;
   
   h2 {
-      font-size: 24px;
-      font-weight: 500;
+      font-size: 3rem;
+      font-weight: 400;
   }
 
   p {
-      font-size: 16px;
-      line-height: 1.5;
+      font-size: 2rem;
+      font-weight: 300;
       margin-bottom: 10px;
   }
 
   strong {
-      font-weight: 500;
+      font-weight: 400;
   }
 }
 
@@ -176,10 +197,12 @@
   color: #252525;
   margin: 0 auto;
   margin-bottom: 3rem;
-  width: 80%;
+  width: 90%;
   padding-top: 1rem;
 
   h2 {
+    font-size: 3rem;
+    font-weight: 200;
     border-bottom: 1px solid #252525;
     text-align: center;
     cursor: pointer;
@@ -190,15 +213,15 @@
     padding: 10px 0;
 
     .faq-question {
+      font-size: 1.5rem;
       display: flex;
       justify-content: space-between;
       cursor: pointer;
-      font-weight: bold;
     }
 
     .faq-answer {
+      font-size: 1.5rem;
       padding: 10px 0;
-      font-size: 14px;
       color: #666;
     }
   }
